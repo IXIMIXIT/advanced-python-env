@@ -1,16 +1,10 @@
-import sys
+s1 = input().strip()
+s2 = input().strip()
 
-def are_anagrams():
-    s1 = sys.stdin.readline().strip()
-    s2 = sys.stdin.readline().strip()
-    
-    if len(s1) != len(s2):
-        print("NO")
-        return
-
+if len(s1) != len(s2):
+    print("NO")
+else:
     if sorted(s1) == sorted(s2):
         print("YES")
     else:
         print("NO")
-
-are_anagrams()

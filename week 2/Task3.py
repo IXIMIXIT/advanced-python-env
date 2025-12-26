@@ -1,4 +1,4 @@
-eeq = input().strip()
+eq = input().strip()
 a, op, b, _, c = eq[0], eq[1], eq[2], eq[3], eq[4]
 
 if a == 'x':

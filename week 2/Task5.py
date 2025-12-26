@@ -1,12 +1,19 @@
-import sys
+n = int(input())
+valid_letters = "ABCEHKMOPTXY"
 
-lines = sys.stdin.read().split()
-N = int(lines[0])
-valid_chars = "ABCEHKMOPTXY"
+for i in range(n):
+    plate = input().strip()
+    
+    if len(plate) != 6:
+        print("No")
+        continue
 
-for i in range(1, N + 1):
-    p = lines[i]
-    if len(p) == 6 and p[0] in valid_chars and p[1:4].isdigit() and p[4] in valid_chars and p[5] in valid_chars:
+    check1 = plate[0] in valid_letters
+    check2 = plate[1:4].isdigit()
+    check3 = plate[4] in valid_letters
+    check4 = plate[5] in valid_letters
+
+    if check1 and check2 and check3 and check4:
         print("Yes")
     else:
         print("No")
