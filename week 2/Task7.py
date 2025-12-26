@@ -1,19 +1,27 @@
-from collections import Counter
-
 items = input().split()
-counts = Counter(items)
+counts = {}
+
+for x in items:
+    if x in counts:
+        counts[x] += 1
+    else:
+        counts[x] = 1
 
 print("Purchase frequency:")
-for item, freq in counts.items():
-    print(f"{item}: {freq}")
+for name in counts:
+    print(name + ": " + str(counts[name]))
 
-most_popular = counts.most_common(1)[0][0]
-print(f"Most popular item: {most_popular}")
+most_popular = ""
+highest = 0
+for name in counts:
+    if counts[name] > highest:
+        highest = counts[name]
+        most_popular = name
 
-once = [item for item, freq in counts.items() if freq == 1]
-print(f"Purchased once: {' '.join(once)}")
+print("Most popular item: " + most_popular)
 
-sorted_items = sorted(counts.items(), key=lambda x: x[1], reverse=True)
-print("Sorted by frequency:")
-for item, freq in sorted_items:
-    print(f"{item} {freq}")
+once = []
+for name in counts:
+    if counts[name] == 1:
+        once.append(name)
+print("Purchased once: " + " ".join(once))

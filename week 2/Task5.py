@@ -1,22 +1,12 @@
-def validate_plate(plate):
-    allowed_letters = "ABCEHKMOPTXY"
-    if len(plate) != 6:
-        return "No"
-    
-    # Pattern: L D D D L L
-    checks = [
-        plate[0] in allowed_letters,
-        plate[1].isdigit(),
-        plate[2].isdigit(),
-        plate[3].isdigit(),
-        plate[4] in allowed_letters,
-        plate[5] in allowed_letters
-    ]
-    return "Yes" if all(checks) else "No"
-
 import sys
-input_data = sys.stdin.read().splitlines()
-if input_data:
-    n = int(input_data[0])
-    for i in range(1, n + 1):
-        print(validate_plate(input_data[i]))
+
+lines = sys.stdin.read().split()
+N = int(lines[0])
+valid_chars = "ABCEHKMOPTXY"
+
+for i in range(1, N + 1):
+    p = lines[i]
+    if len(p) == 6 and p[0] in valid_chars and p[1:4].isdigit() and p[4] in valid_chars and p[5] in valid_chars:
+        print("Yes")
+    else:
+        print("No")

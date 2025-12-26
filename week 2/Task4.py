@@ -3,6 +3,7 @@ text = input().strip()
 words = set()
 
 for i in range(n - m + 1):
-    words.add(text[i:i+m])
+    word = text[i:i+m]
+    words.add(word)
 
 print(len(words))
