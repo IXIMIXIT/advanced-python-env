@@ -1,6 +1,6 @@
 N = int(input())
 
 if N >= 1:
-    print(N * (N + 1) / 2)
+    print(N * (N + 1) / 2)                  #5+4+3+2+1=15 (5*(5+1))/2=15
 else:
-    print(-(abs(N) * (abs(N) + 1) / 2) + 1)
+    print(-(abs(N) * (abs(N) + 1) / 2) + 1) #(-(0*(0+1))/2)+1=1
