@@ -12,8 +12,4 @@ diag = math.sqrt(x**2 + y**2)
 area2 = heron(z, t, diag)
 print(area1 + area2)
 
-# 7.2: Integer to 10-digit Octal
-print("\nTask 7.2: Octal Converter")
-n = int(input())
-o = oct(n)[2:]
-print(o.zfill(10))
+
